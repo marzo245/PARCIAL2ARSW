@@ -34,13 +34,13 @@ public class Order {
         return tableNumber;
     }
 
-    public void addDish(String p, int amount) {
-        if (!orderAmountsMap.containsKey(p)){
-            orderAmountsMap.put(p, amount);
+    public void addDish(String name, int amount) {
+        if (!orderAmountsMap.containsKey(name)){
+            orderAmountsMap.put(name, amount);
         }
         else{
-            int previousAmount=orderAmountsMap.get(p);
-            orderAmountsMap.put(p, previousAmount+amount);
+            int previousAmount=orderAmountsMap.get(name);
+            orderAmountsMap.put(name, previousAmount+amount);
         }
     }
 

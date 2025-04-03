@@ -5,11 +5,14 @@ import edu.eci.arsw.myrestaurant.model.Order;
 import edu.eci.arsw.myrestaurant.model.RestaurantProduct;
 import edu.eci.arsw.myrestaurant.beans.BillCalculator;
 import edu.eci.arsw.myrestaurant.model.ProductType;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.stereotype.Service;
 
+@Service
 public class RestaurantOrderServicesStub implements RestaurantOrderServices {
 
     
@@ -20,6 +23,15 @@ public class RestaurantOrderServicesStub implements RestaurantOrderServices {
 
     public void setBillCalculator(BillCalculator calc) {
         this.calc = calc;
+    }
+
+    public Map<Integer, Order> getOrders(){
+        return tableOrders;
+    }
+
+    public  void  agregarOrder(String order){
+        Order ordernueva = new Order(tableOrders.size());
+        tableOrders.put(tableOrders.size(), ordernueva);
     }
 
     @Override
